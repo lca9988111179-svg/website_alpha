@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-column Hamburger Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- Navbar -->
+    <header class="bg-red-700 backdrop-opacity-60 shadow-md sticky top-0 z-50 opacity-100 text-red-200 font-roboto">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-2xl font-bold"><img src="logo.svg" alt="LCA"></div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6 text-lg">
+                <a href="#home" class="hover:text-amber-100">Home</a>
+                <a href="#services" class="hover:text-amber-100">Features</a>
+                <a href="#about" class="hover:text-amber-100">About</a>
+                <a href="#contact" class="hover:text-amber-100">Contact</a>
+            </nav>
+
+            <!-- Hamburger Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
+        </div>
+
+        <!-- Mobile Menu (multi-column) -->
+        <div id="menu" class="hidden md:hidden bg-red-800 p-6">
+            <div class="grid grid-rows-4 gap-6 text-center">
+                <a href="#home" class="flex text-md text-amber-100 hover:text-amber-100">How It</a>
+                <a href="#about" class="flex text-md text-amber-100 hover:text-amber-100">Features</a>
+                <a href="#services" class="flex text-md text-amber-100 hover:text-amber-100">About</a>
+                <a href="#projects" class="flex text-md text-amber-100 hover:text-amber-100">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sections -->
+    <main>
+        <section id="home"
+            class="relative min-h-screen grid h-screen w-full grid-cols-1 justify-center bg-[url(sec1bg.jpg)] bg-cover bg-center backdrop-brightness-10 lg:bg-gradient-to-b from-zinc-950 to-stone-950 lg:grid-cols-5 gap-4 md:bg-url">
+            <div class="z-40 lg:col-span-3 flex flex-col space-y-4 justify-center items-center text-slate-100">
+                <span class="text-6xl text-transparent [-webkit-text-stroke:3px_white]">TRANSFORM</span><span
+                    class="text-4xl text-fuchsia-100">YOUR INDUSTRY WITH</span><span
+                    class="text-9xl flex gap-6 [-webkit-text-stroke:3px_white]">L<img src="LCA-middle.svg" alt="C"
+                        class="inline w-sm h-sm">A</span>
+            </div>
+            <div class="hidden lg:col-span-2 lg:block"></div>
+            <div
+                class="absolute h-full inset-0 z-10 bg-gradient-to-b from-stone-900/60 to-teal-950/70 bg-backdrop-blur-50 lg:hidden">
+            </div>
+        </section>
+        <section id="about" class="min-h-screen flex items-center justify-center bg-gray-200">
+            <h1 class="text-4xl font-bold">About</h1>
+        </section>
+        <section id="services" class="min-h-screen flex items-center justify-center bg-gray-100">
+            <h1 class="text-4xl font-bold">Services</h1>
+        </section>
+        <section id="projects" class="min-h-screen flex items-center justify-center bg-gray-200">
+            <h1 class="text-4xl font-bold">Projects</h1>
+        </section>
+        <section id="contact" class="min-h-screen flex items-center justify-center bg-gray-100">
+            <h1 class="text-4xl font-bold">Contact</h1>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 p-6 text-center">
+        © 2025 MySite. All rights reserved.
+    </footer>
+
+    <!-- Script at bottom -->
+    <script>
+        tailwind.config = {theme: {extend: {fontFamily: {poppins: ['Poppins', 'sans-serif'], roboto: ['Roboto', 'sans-serif'], lato: ['Lato', 'sans-serif']}}}}
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuBtn = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu");
+
+            menuBtn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>
